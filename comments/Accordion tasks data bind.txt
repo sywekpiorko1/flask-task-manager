@@ -1,0 +1,39 @@
+We now have our accordions in place.
+And the accordions contain sample data, such as some lorem ipsum and so on.
+We're going to replace that with some actual dynamically generated data from the database.
+Now in this case, we only have one record, but that will build over time.
+So an accordion is really a stylized unordered list with list items.
+So what we're going to do is we're going to dynamically generate a list item in a list for every record returned, or every document returned, from the database.
+We use a for loop.
+Again, for task in tasks.
+So we can reuse the jinja functionality that we created earlier.
+And we're going to wrap a list item in the for loop.
+What we're getting there is a kind of conditional rendering.
+You'll get an instance of a list item for every record represented in the database or that's returned based on a particular search.
+And for each instance, we will display the task name.
+Beside that, we will display the task header.
+So these will appear in the collapsible header, or the accordion header.
+And when you expand the accordion element, we have a div and a span.
+And let's replace the lorem ipsum with the task description.
+This conditional rendering is quite common across all templated frameworks.
+Angular uses it, React can use it, Vue can use this, Django can use this.
+So once you get a sense of one of the frameworks, it's very easy to transition to another framework type.
+There we go, Buy Detergent.
+Now notice the icon on the site doesn't really suit.
+It's a cloud, so we'll create a custom one.
+And what we're going to look for is an icon that gives a visual clue to the user that more information is available and that if they expand, they'll see a task description.
+So we're going to go to material icons.
+And we're going to search for an appropriate icon.
+You can see there that the icons are broken into different categories.
+As I mentioned in an earlier video, it's not as rich as Font Awesome, but it's still pretty comprehensive.
+We're looking for an expand icon.
+Notice that these icons are represented in an <i> tag, which used to be italics.
+Italics is no longer the preferred way of representing italicized text.
+We use em for emphasis now.
+So that's why this slightly deprecated tag has become commonly used with icons.
+So it's no longer i for italics.
+It's i for icon.
+We've swapped it in.
+The user now is given a visual clue as to the fact that there is more information available if they click on this element.
+Last thing we'll do, then, is we'll make it strong so that the task name is more emphasized.
+And there we go. We have our task list.
