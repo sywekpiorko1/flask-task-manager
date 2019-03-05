@@ -1,1 +1,1 @@
-flask-task-manager prohect by CI
+flask-task-manager project by CI
