@@ -1,0 +1,63 @@
+We now have the Edit Category wired and the delete category wired.
+Now let's add a category.
+Let's create a new template called add category.
+What we're going to do is we're going to take the contents of edit category, copy that, and paste it in to the add category template because the functionality and the layout for both add and edit is very similar.
+Let's clean up some extra tabs here.
+Let's change our form action.
+We'll change it to insert_category.
+We remove the category_id because we don't yet have one.
+We're in the process of creating a new category at this point.
+Remove the default values from the edit functionality.
+So that frees up the text input field to be empty.
+Change the text on the button to Add Category.
+Then we go over to change our heading to Add Category.
+Go to app.py.
+Let's create the corresponding function at this point.
+Add our routing.
+It'll be insert_category.
+No need for an ID this point, remember, because the category doesn't yet exist.
+But we do need to specify our HTTP methods value, and, as per usual, we use POST.
+Let's access our Mongo database in preparation for the insert.
+So categories = mongo.db.categories
+Let's use this cursor.
+We're going to create another variable called category_doc.
+Going to create a new BSON formatted document, which, remember, is more or less JSON anyway.
+Let's get the request form.
+Let's get the form field, which is category_name.
+Then we add the category_doc into the categories table, our collection.
+Then return a redirect back to categories.
+You just say get_categories. That's the function that we're targeting.
+So that will ultimately do the insert.
+But we need to have the function that will direct us and render the view that allows us to add a new category in the first place.
+So let's do that now.
+Add our @app.route('/new_category').
+To be consistent, we could have called that add_category to be consistent with add tasks.
+You can change that if you want.
+Just make sure if you do that you change it in the appropriate places where it's being called.
+New_category just simply returns a render_template, which is a rendering of a view.
+By the way, a template is another name for a view.
+Let's add a new HTML file called addcategory.
+What we're going to do here is we're going to take the code, the mark-up, that was used for edit category, copy it, paste it, and modify it.
+Change our heading to add instead of edit.
+Get rid of the value because there will be no default value placed inside there because the category is yet to be saved.
+Let's change the text on our button.
+Let's change the form action from update to insert.
+We'll also get rid of the category_id because the category has yet to be created. It doesn't have an ID because it's not yet in the database.
+Now we need to add a button to our categories list. We're going to add that button beneath our categories list.
+So we go back to the categories page, our template, or view.
+We're going to add a button.
+Now notice this button isn't inside a form because we're not submitting a form, which is clicking on a button and redirecting to another resource.
+So we use a standard <a> tag here, rather than a button.
+As a challenge, you can also do something similar in the tasks list, which will allow you to add a task directly below the task list, rather than using the menu bar.
+We need a <href>.
+So we need a location for this <a> tag.
+The URL that we'll use will be new_category.
+Let's just clean this up a little bit.
+Change the text on the button to Add Category.
+That looks odd.
+Let's go back.
+It should be playlist_add, rather than add_playlist.
+Do a refresh.
+So we now we have the ability to add category.
+We need the category list.
+There we have it, add category.
